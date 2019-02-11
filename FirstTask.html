@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numbers</title>
+</head>
+<body>
+<script type="text/javascript">
+    function sheep(id) {
+        let line = "";
+        let size = document.getElementById(id).value;
+        for (let i=1;i<=size;i++){
+            line += (i+" sheep...");
+        }
+        elem = document.createElement("p");
+        elem.innerHTML =line;
+        document.body.appendChild(elem);
+
+    }
+</script>
+<form name="test" method="post">
+    <p>Введите число:</p>
+    <input type="text" id="txt"/>
+    <input type="button" onclick="sheep('txt');" value="Отправить"/>
+</form>
+</body>
+</html>

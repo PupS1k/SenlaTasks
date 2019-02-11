@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShortWord</title>
+</head>
+<body>
+<script type="text/javascript">
+    function shortWord(id) {
+        let line = document.getElementById(id).value;
+        let words = line.split(' '), min = words[0].length;
+        words.forEach(function(word){
+            if(word.length<min) min=word.length;
+            console.log(word);
+        });
+        elem = document.createElement("p");
+        elem.innerHTML ="The shortest length of the word: "+ min;
+        document.body.appendChild(elem);
+
+    }
+</script>
+<form name="test" method="post">
+    <p>Введите строку:</p>
+    <input type="text" id="txt"/>
+    <input type="button" onclick="shortWord('txt');" value="Отправить"/>
+</form>
+</body>
+</html>

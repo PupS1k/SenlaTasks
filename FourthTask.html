@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<script type="text/javascript">
+    function getDimensionalArray(array, size) {
+            document.write("Входной массив: ["+ array+"]");
+            document.write("<br/>Входной размер: "+size+"<br/>");
+            let newArr = [], partArr;
+            document.write("Выходной массив: ");
+            while(array.length>0) {
+                partArr = [];
+                for (let i = 0; i < size && array.length>0; i++) {
+                    partArr.push(array[0]);
+                    array.shift();
+                }
+                document.write("["+partArr+"]");
+                newArr.push(partArr);
+            }
+            console.log(newArr);
+    }
+</script>
+<form name="test" method="post">
+    <input type="button" onclick="getDimensionalArray([2,42,43,1,5,62,6,3],3);" value="Вывести"/>
+    <table id="field"></table>
+</form>
+</body>
+</html>

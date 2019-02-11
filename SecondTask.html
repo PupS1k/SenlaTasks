@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Figure</title>
+</head>
+<body>
+<script type="text/javascript">
+    function randColor() {
+        let line='#';
+        for(let i=0;i<6;i++)
+            line+=Math.floor(Math.random() * 10).toString();
+        return line;
+    }
+    function square(id,idOutput) {
+        let size = document.getElementById(id).value;
+        for (let i = 0; i < size; i++) {
+            let row = document.createElement("tr");
+            document.getElementById(idOutput).appendChild(row);
+            for (let j = 0; j < size; j++) {
+                let field = document.createElement("td");
+                field.style.width=size+'px';
+                field.style.height=size+'px';
+                field.style.backgroundColor = randColor();
+                row.appendChild(field);
+            }
+        }
+    }
+</script>
+<form name="test" method="post">
+    <p>Введите число от 0 до 30:</p>
+    <input type="text" id="txt"/>
+    <input type="button" onclick="square('txt','field');" value="Отправить"/>
+    <table id="field"></table>
+</form>
+</body>
+</html>
