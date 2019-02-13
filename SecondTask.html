@@ -12,15 +12,18 @@
             line+=Math.floor(Math.random() * 10).toString();
         return line;
     }
-    function square(id,idOutput) {
+    function square(id) {
         let size = document.getElementById(id).value;
         for (let i = 0; i < size; i++) {
-            let row = document.createElement("tr");
-            document.getElementById(idOutput).appendChild(row);
+            let row = document.createElement("div");
+            document.body.appendChild(row);
             for (let j = 0; j < size; j++) {
-                let field = document.createElement("td");
+                let field = document.createElement("div");
                 field.style.width=size+'px';
                 field.style.height=size+'px';
+                field.style.marginLeft=size+'px';
+                field.style.marginTop=size+'px';
+                field.style.display = 'inline-block';
                 field.style.backgroundColor = randColor();
                 row.appendChild(field);
             }

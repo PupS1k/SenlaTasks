@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function createHolder(num){
+        let obj ={
+            numObj:num,
+            getValue:function(){
+                return this.numObj;
+            },
+            setValue:function (num) {
+                this.numObj = num;
+            }
+        };
+        console.log(num);
+        console.log(obj);
+        console.log(obj.getValue());
+        obj.setValue(35);
+        console.log(obj.getValue());
+    }
+</script>
+<form name="test" method="post">
+    <input type="button" onclick="createHolder(41);" value="Вывести"/>
+</form>
+</body>
+</html>

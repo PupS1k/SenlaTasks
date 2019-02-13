@@ -20,7 +20,7 @@
 </script>
 <form name="test" method="post">
     <p>Введите число:</p>
-    <input type="text" id="txt"/>
+    <input type="text" id="txt" pattern="[0-9]" required title="Разрешены только числа"/>
     <input type="button" onclick="sheep('txt');" value="Отправить"/>
 </form>
 </body>
