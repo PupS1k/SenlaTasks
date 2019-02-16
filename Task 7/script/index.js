@@ -1,19 +1,18 @@
-function createHolder(num){
-    return obj ={
-        numObj:num,
-        getValue:function(){
+function createHolder(num) {
+    return {
+        numObj: num,
+        getValue: function () {
             return this.numObj;
         },
-        setValue:function (num) {
+        setValue: function (num) {
             this.numObj = num;
         }
     };
 }
-function main(num) {
+
+function main() {
+    let num = [123, '23'];
     console.log(num);
-    obj = createHolder(num);
+    let obj = createHolder(num);
     console.log(obj);
-    console.log(obj.getValue());
-    obj.setValue(35);
-    console.log(obj.getValue());
 }

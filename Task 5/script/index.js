@@ -4,14 +4,17 @@ function compareNumeric(a, b) {
 }
 
 function getLowerestIndex(array, num) {
-    document.write("Входной массив: [" + array + "]");
-    console.log("Входной массив: [" + array + "]");
-    document.write("<br/>Входное число: " + num + "<br/>");
-    document.write("Выходной массив: ");
     array.push(num);
     array.sort(compareNumeric);
-    console.log("Выходной массив: [" + array + "]____Число: " + num);
-    console.log("Первый элемент массива: " + array[0]);
-    document.write("[" + array + "]");
-    document.write("<br/>Первый элемент массива: " + array[0]);
+    num = array.indexOf(num);
+    return num;
+}
+function main() {
+    let array = [1,2,2,2,3,3,4,4,5];
+    let num = 3;
+    document.write("Входной массив: [" + array + "]");
+    document.write("<br/>Входное число: " + num + "<br/>");
+    num = getLowerestIndex(array,num);
+    document.write("Наименьший индекс: " + num);
+    console.log("Наименьший индекс: " + num);
 }

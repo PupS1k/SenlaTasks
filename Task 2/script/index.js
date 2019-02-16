@@ -7,7 +7,15 @@ function randColor() {
 
 function checkData(id) {
     let sizeSquare = document.getElementById(id).value;
-    sizeSquare <= 30 && sizeSquare >= 0 ? createSquare(sizeSquare) : alert('Ошибка!!!\nРазрешены только числа от 0 до 30');
+    for (let i = 0; i < 31; i++) {
+        try {
+            let div = document.getElementsByTagName('DIV')[0];
+            div.parentNode.removeChild(div);
+        } catch (e) {
+            sizeSquare <= 30 && sizeSquare >= 0 ? createSquare(sizeSquare) : alert('Ошибка!!!\nРазрешены только числа от 0 до 30');
+            break;
+        }
+    }
 }
 
 function createSquare(size) {
